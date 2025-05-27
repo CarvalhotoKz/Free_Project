@@ -1,122 +1,155 @@
-body{
+body {
   background-color: #333;
-  font-family: 'Times New Roman', Times, serif; 
+  font-family: 'Times New Roman', Times, serif;
   margin: 0;
-  
 }
 
-/*INDEX.HTML*/
+header {
+  padding: 1rem;
+}
 
-.inicio{
+.inicio,
+.cadastro {
   background-color: #333;
-  margin-top: -27px;
+  margin-top: 0;
   padding-bottom: 1rem;
 }
 
-.logo{
-    text-shadow: 2px 2px 4px #000000;
-    font-family: Georgia, 'Times New Roman', Times, serif; 
-    color: #c75102; 
-    text-decoration: none;
-    font-size: 20px;
-    position: relative;
-    left: 2rem;
-    top: 2rem;
-}
-
-.menu{
-  list-style-type: none;
-  display: flex;
-  padding: 0;
-}
-
-.menu li{
-  margin-right: 50px;  
-}
-
-.menu a{
-  text-decoration: none;
-  color: #333;
-  font-size: 20px;
-  position: relative;
-  top: 1rem;
-  left: 65rem;
-}
-
-.menu a:hover{
+.logo,
+.logocad,.sobre {
+  text-shadow: 2px 2px 4px #000000;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   color: #c75102;
-}
-  
-
-/*SOBRE.HTML*/
-
-
-
-/*CADASTRO.HTML*/
-
-.cadastro{
-  background-color: #f4f4f4;
-  margin-top: -27px;
-  padding-bottom: 1rem;
-}
-
-.logocad{
-    text-shadow: 2px 2px 4px #000000;
-    font-family: Georgia, 'Times New Roman', Times, serif; 
-    color: #c75102; 
-    text-decoration: none;
-    font-size: 40px;
-    text-align: center;
-    position: relative;
-    top: 2rem;
-}
-
-.menu a #cad{
+  text-decoration: none;
+  font-size: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
-.cadastre-se h2{
-  text-shadow: 2px 2px 4px #000000;
-  font-family: Georgia, 'Times New Roman', Times, serif; 
-  color: #c75102; 
-  text-decoration: none;
-  font-size: 30px;
+.menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 1rem;
 }
 
-.cadastre-se{
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #c75102;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #ff8000;
+}
+
+.cadastre-se {
   background-color: #f4f4f4;
-  padding: 10px;
-  margin-top: 2rem;
-  margin-bottom: 20px;
-  margin-right: 1rem;
-  margin-left: 1rem;
+  padding: 1rem;
+  margin: 2rem 1rem;
   border-radius: 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-size: 1.1rem;
   color: #222;
 }
 
-.cadastre-se input{
-   width: calc(100% - 12px);
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+.cadastre-se h2 {
+  color: #c75102;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
-#enviar{
+.cadastre-se input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#enviar {
   background-color: #333;
   color: white;
   padding: 10px 15px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
+  width: 100%;
   transition: background-color 0.3s ease;
-  
 }
 
-#enviar:hover{
+#enviar:hover {
   background-color: #c75102;
+}
+
+footer {
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+}
+
+/* Layout de altura total com flexbox */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1; /* Faz o conteúdo crescer para ocupar o espaço disponível */
+}
+
+/* Rodapé fixo no final */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+
+/* -------- MEDIA QUERY -------- */
+@media (max-width: 768px) {
+  .logo,
+  .logocad {
+    font-size: 1.5rem;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu a {
+    font-size: 1rem;
+  }
+
+  .cadastre-se {
+    margin: 1rem;
+  }
+
+  .cadastre-se h2 {
+    font-size: 1.2rem;
+  }
+
+  #enviar {
+    font-size: 1rem;
+  }
 }
