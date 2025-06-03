@@ -18,16 +18,24 @@ const pesquisarCep = async() => {
         } else{
             preencherFormulario(addres);
         }
+    } else {
+         alert ("CEP incorreto, tente novamente");
     }
 }
 
-limparFormulario = () => {
-    document.getElementById('rua').value = '';
-    document.getElementById('numero').value = '';
-    document.getElementById('bairro').value = '';
-    document.getElementById('cep').value = '';
+const preencherFormulario = (endereco) => {
+    document.getElementById('rua').value = endereco.logradouro;
+    document.getElementById('cidade').value = endereco.localidade;
+    document.getElementById('bairro').value = endereco.bairro;
+    document.getElementById('estado').value = endereco.estado;
 }
 
-preencherFormulario = (endereco) => {
-    
+const limparFormulario = () => {
+    document.getElementById('rua').value = '';
+    document.getElementById('cidade').value = '';
+    document.getElementById('bairro').value = '';
+    document.getElementById('estado').value = '';
 }
+
+document.getElementById('cep').addEventListener('focusout', pesquisarCep);
+
